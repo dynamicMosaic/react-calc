@@ -69,4 +69,60 @@ export default function calculate(obj, buttonName) {
         return { next: "0."};
     }
 
+    if (buttonName === "=") {
+        if(obj.next && obj.operation) {
+            return {
+                total: operate(obj.total, obj.next, obj.operation),
+                next: null,
+                operation: null,
+            };
+        } else {
+            // handle '=' with no operation, return nothing
+            return {};
+        }
+    }
+
+    if (buttonName === "+/-") {
+        if(obj.next) {
+            return { next: (-1 * parseFloat(obj.next)).toString() };
+        }
+        if (obj.total) {
+            return { total: (-1 * parseFloat(obj.total)).toString() };
+        }
+        return {};
+    }
+
+    // Handle case for user pressing button without having entered number
+
+    // if (!obj.next && !obj.total) {
+    //     return {};
+    // }
+
+// if user presses an operation button during existing operation
+if (obj.operation) {
+    return {
+        total: operate(objtotal, obj.next, obj.operation),
+        next: null,
+        operation: buttonName,
+    };
+}
+
+
+// if user types operation without typing number
+if (!obj.next) {
+    return { operation: buttonName };
+}
+
+
+
+
+// save operation and push 'next to 'total'
+    return {
+
+        total: obj.next,
+        next: null,
+        operation: buttonName
+    };
+
+
 }
