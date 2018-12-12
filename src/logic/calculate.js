@@ -1,5 +1,4 @@
 import Big from "big.js";
-
 import operate from "./operate";
 import isNumber from "./isNumber";
 
@@ -101,7 +100,7 @@ export default function calculate(obj, buttonName) {
 // if user presses an operation button during existing operation
 if (obj.operation) {
     return {
-        total: operate(objtotal, obj.next, obj.operation),
+        total: operate(obj.total, obj.next, obj.operation),
         next: null,
         operation: buttonName,
     };

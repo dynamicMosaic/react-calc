@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// import "./Display.css";
+import "./DisplayTop.css";
 
 class DisplayTop extends React.Component {
     render() {
@@ -13,7 +13,7 @@ class DisplayTop extends React.Component {
         );
     }
 }
-DisplayTop.PropTypes = {
+DisplayTop.propTypes = {
     value: PropTypes.string,
 };
 
