@@ -16,7 +16,7 @@ class ButtonPanel extends React.Component {
                     <Button name="AC" clickHandler={this.handleClick} />
                     <Button name="+/-" clickHandler={this.handleClick} />
                     <Button name="%" clickHandler={this.handleClick} />
-                    <Button name="+" clickHandler={this.handleClick} />
+                    <Button name="÷" clickHandler={this.handleClick} />
                 </div>
                 <div>
                     <Button name="7" clickHandler={this.handleClick} />
